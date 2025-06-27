@@ -64,7 +64,7 @@ def is_alphabetical(string:str) -> bool:
 ```
 that returns `True` if the input `string` contains letters only (upper or lower case) and `False` otherwise.
 
-*Hint:* remember the basic ASCII values: 65 for 'A', 97 for 'a', 48 for '0' etc.
+*Hint:* remember the basic ASCII values: 65 for `A`, 97 for `a`, 48 for `0` etc.
 
 
 ### Letters only
