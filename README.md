@@ -28,55 +28,102 @@ Your discussion for the above should be in the form of a well-written essay, 200
 
 There is no final exam for the course. There will be a final assignemnt that will be published the week before finals and will be due the week of finals. Additionally, 8 students in the course will be invited randomly to a brief meeting with the instructor during the course's final exam slot. The final exam slot for this course is on Tuesday, August 5, 2025 from 11 AM to 1 PM. If you are selected for a brief meeting, we'll spend about 15 minutes during the final exam slot to review your work. This interview will cover coding practices based on your past assignments. It is meant as a checkpoint to ensure that you have internalized the work you submitted.
 
+
 ## Code
 
 This assignment has TBD tasks. Write your code in file `week05.py`. The file comes with a bit of testing code. Do not modify the testing code. Write your methods *above* the testing code. If your methods are correct, running the testing code will show that you passed the tests. In addition to correct logic, your methods must have **one and only one** return statement each. Useful comments are required.
 
 
-### Find the longest word
+## Code requirements
+* Methods that return a value should have one and only one `return` statement. Multiple `return` statements are not allowed.
+* Methods with `print` statements should not have a `return` statement.
+* The following commands should **not** be used: `import`, `break`, `continue`.
+
+
+### Intersection of two strings
+
 Write a method with header
 ```python
-def longest_word(words: list[str]) -> str:
+def intersection(foo:str, bar:str) -> str | None:
 ```
-that returns the longest word (that is the longest string) in list `words`.
+that returns a string with the intersection of strings `foo` and `bar`, or `None` is there isn't one. The intersection should not contain duplicate characters. For example, the intersection of strings
+```text
+airplanes
+repairman
+```
+is the string **`airpne`**. The order in which the intersectional characters appear in the output is not important.
+
+*Hint:* learn how to use Python's [membership operator (`in`)](https://docs.python.org/3/reference/expressions.html#membership-test-operations).
 
 
-### Find the shortest word
+###  Alphabetical assessment
+
 Write a method with header
 ```python
-def shortest_word(words: list[str]) -> str:
+def is_alphabetical(string:str) -> bool:
 ```
-that returns the shortest word (that is the longest string) in list `words`.
+that returns `True` if the input `string` contains letters only (upper or lower case) and `False` otherwise.
+
+*Hint:* remember the basic ASCII values: 65 for 'A', 97 for 'a', 48 for '0' etc.
 
 
-### Find odd words
+### Letters only
+
 Write a method with header
 ```python
-def odd_words(words: list[str]) -> list[str]:
+def letters_only(string:str) -> str | None:
 ```
-that returns a list with all the strings in list `words` whose length is an odd number.
+that strips all non alphabetical characters from the input string and returns it without them. For example, the if the input `string` is
+```text
+A man, a plan, a canal: Panama
+```
+the output should be `amanaplanacanalPanama`.
 
 
-### Find average words
+### Palindrome generator
+
 Write a method with header
 ```python
-def average_words(words: list[str]) -> list[str]:
+def generate_palindrome(string:str) -> str | None:
 ```
-that returns a list with all the strings in `words` whose length is $\pm 1$ from the average length of all strings in `words`.
+that create a palindrome using the input `string`. For example, if the input string is
+```text
+sturgeon
+```
+the output should be `sturgeonnoegruts` and when the the input string is
+```text
+canoe
+```
+the output should be `canoeonac`.
+
+The palindromic output does not have to make sense, as the examples above show.
 
 
-### Find an intersection
+### Palindrome detector
+
 Write a method with header
 ```python
-def intersect(foo: list[str], bar: list[str]) -> bool:
+def is_palindrome(string:str) -> bool
 ```
-that returns `True` if lists `foo` and `bar` have at least one element in common, anf `False` otherwise. 
+that returns `True` is the input `string` is a palindrome and `False` otherwise. Here are some examples of the method's behavior:
+
+| Input | Output |
+|-------|--------|
+|"raCecar"| `True` |
+|"A man, a plan, a canal: Panama" | `True`
+|"n00n| `True` |
+|"port"|`False`|
+
+
+
 
 ## Reflect
 
 Review the posted [solutions from the previous assignment](./solutions_week04.py). Compare the posted solutions with your solutions. Notice the differences between your code and the solutions code and describe them. Trivial differences like the names of variables are not that important.
 
 ### Frequent mistakes expected at this point
+
+* **Code fails one or more tests**.
 
 * **Code has no comments** to demonstrate mastery of the program.
 
