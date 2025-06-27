@@ -1,56 +1,111 @@
 
 def longest_word(words: list[str]) -> str:
-  longest = None
-  if words is not None and len(words) > 0:
-    longest = words[0]
-    for word in words:
-      if len(word) > len(longest):
-        longest = word
-  return longest
+    """
+    Finds and returns the longest word in a list.
+
+    Parameters:
+        words (list of str): A list of words.
+
+    Returns:
+        str or None: The longest word in the list, or None if the list is empty or None.
+    """
+    longest = None
+    if words is not None and len(words) > 0:
+        longest = words[0]
+        for word in words:
+            # Update if the current word is longer than the longest seen so far
+            if len(word) > len(longest):
+                longest = word
+    return longest
+
 
 def shortest_word(words: list[str]) -> str:
-  shortest = None
-  if words is not None and len(words) > 0:
-    shortest = words[0]
-    for word in words:
-      if len(word) < len(shortest):
-        shortest = word
-  return shortest
+    """
+    Finds and returns the shortest word in a list.
+
+    Parameters:
+        words (list of str): A list of words.
+
+    Returns:
+        str or None: The shortest word in the list, or None if the list is empty or None.
+    """
+    shortest = None
+    if words is not None and len(words) > 0:
+        shortest = words[0]
+        for word in words:
+            # Update if the current word is shorter than the shortest seen so far
+            if len(word) < len(shortest):
+                shortest = word
+    return shortest
+
 
 def odd_words(words: list[str]) -> list[str]:
-  odds = None
-  if words and len(words) > 0:
-    odds = []
-    for word in words:
-      if len(word)%2 == 1:
-        odds.append(word)
-  return odds
+    """
+    Returns a list of words that have an odd number of characters.
+
+    Parameters:
+        words (list of str): A list of words.
+
+    Returns:
+        list of str or None: A list of words with odd lengths, or None if the input is empty or None.
+    """
+    odds = None
+    if words and len(words) > 0:
+        odds = []
+        for word in words:
+            # Check if the word length is odd
+            if len(word) % 2 == 1:
+                odds.append(word)
+    return odds
+
 
 def average_words(words: list[str]) -> list[str]:
-  averages = None
-  if words and len(words) > 0:
-    averages = []
-    avg = 0
-    for word in words:
-      avg += len(word)
-    avg /= len(words)
-    for word in words:
-      if avg-1 <= len(word) and len(word) <= avg+1:
-        averages.append(word)
-  return averages
+    """
+    Returns a list of words whose lengths are within ±1 of the average word length.
+
+    Parameters:
+        words (list of str): A list of words.
+
+    Returns:
+        list of str or None: Words close to the average length, or None if the input is empty or None.
+    """
+    averages = None
+    if words and len(words) > 0:
+        averages = []
+        avg = 0
+        for word in words:
+            # Sum up the lengths of all words
+            avg += len(word)
+        avg /= len(words)
+        for word in words:
+            # Include word if its length is within ±1 of the average
+            if avg - 1 <= len(word) and len(word) <= avg + 1:
+                averages.append(word)
+    return averages
+
 
 def intersect(foo: list[str], bar: list[str]) -> bool:
-  intersection_found = False
-  if foo and bar and len(foo) > 0 and len(bar) > 0:
-    f = 0
-    while not intersection_found and f < len(foo):
-      b = 0
-      while not intersection_found and b < len(bar):
-        intersection_found = foo[f] == bar[b]
-        b += 1
-      f += 1
-  return intersection_found
+    """
+    Checks whether two lists of words share at least one word in common.
 
+    Parameters:
+        foo (list of str): First list of words.
+        bar (list of str): Second list of words.
+
+    Returns:
+        bool: True if there is any common word between the two lists, False otherwise.
+    """
+    intersection_found = False
+    if foo and bar and len(foo) > 0 and len(bar) > 0:
+        f = 0
+        while not intersection_found and f < len(foo):
+            b = 0
+            while not intersection_found and b < len(bar):
+                # Check if the current pair of words match
+                intersection_found = foo[f] == bar[b]
+                b += 1
+            f += 1
+    return intersection_found
 
 
 #--------------------------------------------------------------------------------#

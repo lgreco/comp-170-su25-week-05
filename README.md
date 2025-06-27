@@ -74,7 +74,7 @@ that returns `True` if lists `foo` and `bar` have at least one element in common
 
 ## Reflect
 
-Review the posted [solutions from the previous assignment](./solutions_week03.py). Compare the posted solutions with your solutions. Notice the differences between your code and the solutions code and describe them. Trivial differences like the names of variables are not that important unless your names are really - I mean, *really -* weird.
+Review the posted [solutions from the previous assignment](./solutions_week04.py). Compare the posted solutions with your solutions. Notice the differences between your code and the solutions code and describe them. Trivial differences like the names of variables are not that important.
 
 ### Frequent mistakes expected at this point
 
@@ -85,6 +85,7 @@ Review the posted [solutions from the previous assignment](./solutions_week03.py
 * **Code uses excessive logic** which may be the sign of AI-generated programs.
 
 * **Code does not include type hints (annotations).** This is also typical with solutions found online or are AI-generated.
+
 
 ### Read more about:
 
